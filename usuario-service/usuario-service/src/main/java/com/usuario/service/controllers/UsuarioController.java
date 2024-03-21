@@ -44,6 +44,9 @@ public class UsuarioController {
         return ResponseEntity.ok(nuevoUsuario);
     }
 
+
+
+    //REST TEMPLATE
     @GetMapping("/carros/{usuarioId}")
     public ResponseEntity<List<Carro>> listarCarros(@PathVariable("usuarioId") int id){
         Usuario usuario = usuarioService.getUsuarioById(id);
@@ -69,6 +72,8 @@ public class UsuarioController {
         return ResponseEntity.ok(motos);
 
     }
+
+
 
     @PostMapping("/carro/{usuarioId}")
     public ResponseEntity<Carro> guardarCarro(@PathVariable("usuarioId") int usuarioId, @RequestBody Carro carro){

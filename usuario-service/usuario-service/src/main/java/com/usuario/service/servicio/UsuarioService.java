@@ -46,16 +46,21 @@ public class UsuarioService {
         return usuario;
     }
 
+
+    //REST TEMPLATE
+
     public List<Carro> getCarros(int usuarioId){
-        List<Carro> carros = restTemplate.getForObject("http://localhost:8042/carro/usuario/"+usuarioId,List.class);
+        List<Carro> carros = restTemplate.getForObject("http://localhost:8002/carro/usuario/"+usuarioId,List.class);
         return carros;
     }
 
     public List<Moto> getMotos(int usuarioId){
-        List<Moto> motos = restTemplate.getForObject("http://localhost:8043/moto/usuario/"+usuarioId,List.class);
+        List<Moto> motos = restTemplate.getForObject("http://localhost:8003/moto/usuario/"+usuarioId,List.class);
         return motos;
     }
 
+
+    //FEIGN CLIENT
 
     public Carro saveCarro(int usuarioId, Carro carro){
         carro.setUsuarioId(usuarioId);

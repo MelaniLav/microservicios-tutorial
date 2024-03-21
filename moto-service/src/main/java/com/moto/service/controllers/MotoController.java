@@ -41,6 +41,8 @@ public class MotoController {
         return ResponseEntity.ok(nuevaMoto);
     }
 
+
+    // REST TEMPLATE
     @GetMapping("/usuario/{usuarioId}")
     public ResponseEntity<List<Moto>> listarMotosPorUsuarioId(@PathVariable("usuarioId") int id){
         List<Moto> motos = motoService.byUsuarioId(id);
